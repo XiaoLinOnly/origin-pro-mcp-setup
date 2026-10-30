@@ -21,6 +21,8 @@ Qoder Desktop → stdio MCP (origin-pro) → Origin COM Automation → OriginPro
 
 已验证：MCP 握手、`tools/list`（45 个工具）、独立实例 `list_worksheets` 返回正常。
 
+前置条件：Windows x64、OriginPro 2020+（实测 2021）、uv（会自带 Python）、Git（uv 从 GitHub 安装时需要）。
+
 ## 快速开始
 
 ### 1. 安装 uv
@@ -84,9 +86,10 @@ python scripts/probe_mcp.py --daemon --call list_worksheets
 预期输出（节选）：
 
 ```
-INIT: ... "name": "origin-pro" ...
+INIT: origin-pro 1.30.0
 TOOL COUNT: 45
-CALL: ... {"workbooks": [], "graphs": [], "matrices": []}
+TOOLS: run_labtalk, get_labtalk_variable, create_worksheet, ...
+CALL: {"workbooks": [], "graphs": [], "matrices": []}
 ```
 
 `--daemon` 会在第一次工具调用时打开一个 Origin 窗口；探活脚本不会自动关闭它，也不会停止后台 daemon。需要清理时结束 `Origin64.exe` 和 `python.exe -m origin_pro_mcp.daemon`。
