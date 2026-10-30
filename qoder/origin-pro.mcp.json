@@ -1,0 +1,10 @@
+{
+  "origin-pro": {
+    "command": "C:\\Users\\<you>\\.local\\bin\\origin-pro-mcp.exe",
+    "args": [],
+    "env": {
+      "ORIGIN_PRO_MCP_USE_DAEMON": "1",
+      "ORIGIN_PRO_MCP_ATTACH": "0"
+    }
+  }
+}
